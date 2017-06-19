@@ -1,0 +1,175 @@
+#home-container {
+    #main-content {
+        .date-block {
+            background: #dcdcdc;
+            padding: 5px;
+
+            .date-holder, .date-selector {
+                cursor: pointer;
+            }
+        }
+
+        .table-responsive {
+            tbody {
+                td {
+                    text-align: center;
+                    vertical-align: middle;
+                    border: 1px solid #aaaaaa;
+
+                    a {
+                        border-bottom: 1px #aaaaaa dotted;
+                        cursor: pointer;
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                }
+
+                td.first-td {
+                    text-align: left;
+                    min-width: 200px;
+                    position: relative;
+                    left: 0;
+                    background-color: white;
+                    padding: 0;
+                    border: none;
+
+                    div {
+                        padding: 8px;
+                        border-left: 1px #aaaaaa solid;
+                        border-top: 1px #aaaaaa solid;
+                        border-bottom: 1px #aaaaaa solid;
+                    }
+
+                    div.block {
+                        padding: 0 0 0 8px;
+                        vertical-align: middle;
+                        line-height: 44px;
+                        border: 1px #aaaaaa solid;
+                    }
+
+                    div.spanned {
+                        line-height: 55px;
+                        border: 1px #aaaaaa solid;
+                    }
+                }
+
+                td.no-border {
+                    border: none;
+                }
+
+                .room-block {
+                    background: #cccccc;
+                }
+
+                .days {
+                    background-color: #dcdcdc;
+                }
+
+                .sunday, .saturday {
+                    background-color: #760000;
+                    color: white;
+                }
+
+                .single-room {
+                    background-color: #c5c690;
+
+                    div {
+                        background-color: #c5c690;
+                    }
+                }
+
+                .double-room, {
+                    background-color: #D2E6EE;
+
+                    div {
+                        background-color: #D2E6EE;
+                    }
+                }
+            }
+        }
+    }
+
+    .editable-buttons {
+        margin-top: 5px;
+    }
+
+    .editable-submit {
+        margin-right: 5px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    @media (max-width: 767px) {
+        #home-container {
+            #main-content {
+                .table-responsive {
+                    tbody {
+                        td.first-td{
+                            max-width: 160px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .editable-input {
+            display: block;
+        }
+    }
+
+    .page-navigation {
+        .btn-arrow {
+            width: 30px;
+            height: 27px;
+            font-size: 18px;
+            text-align: center;
+            color: #ffffff;
+            background-color: rgba(127, 127, 127, 0.5);
+            display: block;
+            cursor: pointer;
+            border-radius: 4px;
+            position: relative;
+            top: 50%;
+            line-height: 30px;
+        }
+
+        .right {
+            right: 0;
+            z-index: 9999;
+        }
+
+        .left {
+            left: 0;
+            z-index: 9999;
+        }
+    }
+
+    .bulk-insert-form {
+        .form-contents {
+            padding-top: 10px;
+
+            label.error {
+                color: red;
+            }
+
+            span.checkbox {
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+.checkbox input[type=checkbox] {
+    position: relative;
+    margin: 0;
+}
+
+.checkbox label {
+    padding: 0;
+}
+
+.checkbox {
+    display: inline-block;
+}
