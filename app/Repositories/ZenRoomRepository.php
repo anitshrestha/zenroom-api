@@ -131,7 +131,7 @@ class ZenRoomRepository
 
         } catch( Exception $e ) {
 
-           
+          echo $e->getMessage(); die; 
             if( $e->getCode() == 23000 ) {
                 $statusCode = Response::HTTP_BAD_REQUEST;
                 $message = 'New Hotel Could Not Be Added. Hotel Name Can Not Be Same!!';

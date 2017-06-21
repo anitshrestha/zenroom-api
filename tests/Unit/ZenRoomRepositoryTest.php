@@ -1,10 +1,16 @@
 <?php
 
+/**
+ * Resources: 
+ * https://scotch.io/tutorials/generate-dummy-laravel-data-with-model-factories
+ */
+
 namespace Tests\Unit;
 
 use Tests\TestCase;
 use Mockery as m;
 use Illuminate\Database\Eloquent\Collection;
+
 
 use App\Models\Hotel;
 use App\Models\HotelRoomDetail;
@@ -21,13 +27,12 @@ class ZenRoomRepositoryTest extends TestCase
     protected $hotelRoomDetailMock;
     protected $hotelRoomTypeMock;
     protected $zenRoomRepository;
-    
+    protected $faker;
+
     public function setUp()
     {
         parent::setUp();
 
-        // $user = factory(App\User::class)->make();
-        
         $this->hotelMock = m::mock(Hotel::class);
         $this->hotelRoomDetailMock = m::mock(HotelRoomDetail::class);
         $this->hotelRoomTypeMock = m::mock(HotelRoomType::class);
@@ -37,6 +42,8 @@ class ZenRoomRepositoryTest extends TestCase
             $this->hotelRoomDetailMock,
             $this->hotelRoomTypeMock
         );
+
+        $this->faker = \Faker\Factory::create();
     }
 
     /**
@@ -51,15 +58,15 @@ class ZenRoomRepositoryTest extends TestCase
         );
 
         $fillable = [
-            'name' => 'test 4',
-            'about' => 'about test 2 hotel'
+            'name' => implode(' ', $this->faker->words(2)),
+            'about' => $this->faker->sentence(2)
         ];
 
-        $result = $this->zenRoomRepository->createHotels($fillable);
+        $result = $this->zenRoomRepository->createHotel($fillable);
         
         $result  = json_decode($result);
 
-        $this->assertEquals($result->status_code, 201);
+        $this->assertEquals( 201, $result->status_code );
     }
 
     /**
@@ -90,7 +97,7 @@ class ZenRoomRepositoryTest extends TestCase
         );
 
         $fillable = [
-            'name' => 'type 1',
+            'name' => implode(' ', $this->faker->words(2)),
         ];
 
         $result = $this->zenRoomRepository->createHotelType($fillable);

@@ -11,4 +11,4 @@ npm-debug.log
 yarn-error.log
 mix-manifest.json
 /bower_components
-/dbdata
+/dbdata/**
