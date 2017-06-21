@@ -153,6 +153,13 @@ class ZenRoomRepository
         return json_encode($return);
     }
 
+    /**
+     * [createHotelType description]
+     * 
+     * @param  array  $params [description]
+     * 
+     * @return [type]         [description]
+     */
     public function createHotelType(array $params) : string
     {
         $this->hotelRoomType->name = $params['name'];
@@ -190,8 +197,8 @@ class ZenRoomRepository
         return json_encode($return);
     }
 
-        /**
-     * Store room details
+    /**
+     * Save room Date range and price
      *
      * @param array $params
      */
