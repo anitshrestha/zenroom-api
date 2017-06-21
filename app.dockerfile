@@ -11,13 +11,8 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
     # Make sure we're installing what we think we're installing!
     && php -r "if (hash('SHA384', file_get_contents('/tmp/composer-setup.php')) !== trim(file_get_contents('/tmp/composer-setup.sig'))) { unlink('/tmp/composer-setup.php'); echo 'Invalid installer' . PHP_EOL; exit(1); }" \
     && php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot \
-    && rm -f /tmp/composer-setup.*
-
-RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
-     bash nodesource_setup.sh && \
-     apt-get install nodejs && \
-     rm nodesource_setup.sh && \
-     npm install -g yarn
+    && rm -f /tmp/composer-setup.* \
+    && composer install
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
