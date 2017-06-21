@@ -11,7 +11,6 @@ use App\LogicValidators\DataValidator;
 use App\Models\Hotel;
 use App\Models\HotelRoomDetail;
 use App\Models\HotelRoomType;
-use App\Exceptions\HotelNotFoundException;
 
 class ZenRoomRepository
 {
