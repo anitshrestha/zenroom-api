@@ -7,10 +7,9 @@ Route::post('hotel/room-type', 'ApiController@createHotelType');
 Route::get('hotel/room-type', 'ApiController@getHotelRoomTypes');
 Route::get('hotel/room-type/{slug}', 'ApiController@getHotelRoomTypes');
 
-Route::get('hotel/detail/{slug}/{date}', 'ApiController@getHotelWithRoomsAndPrice');
+Route::get('hotel/detail/{slug}/{date}', 'ApiController@getHotelWithRoomsAndPrice')->name('hotel-detail');
 
 Route::post('hotel/detail/{slug}', 'ApiController@addHotelRoomsPriceAndType');
-
 Route::patch('hotel/detail/{slug}', 'ApiController@addHotelRoomsPriceAndType');
 
 //NOTE: RND to move ahead. Need to find way to bind the route with 

@@ -150,11 +150,12 @@ $(document).ready(function() {
     $.notify.defaults({globalPosition: 'top center'});
     $('.date-input').datepicker({ autoclose: true, format: 'yyyy-mm-dd'});
     $('#detail-table').tableHeadFixer({'top': false, 'left' : 1});
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+    
+    // $.ajaxSetup({
+    //     headers: {
+    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     }
+    // });
 
     //Adding Validation
     $.validator.addMethod('greaterThan', Hotel.validateDate, 'Must be greater than \'from date\'');       

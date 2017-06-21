@@ -8,17 +8,10 @@ use Illuminate\View\View;
 
 class WebController extends Controller
 {
+    public function detail(string $slug) : View {
 
-    public function __construct() {}
-
-    public function index()
-    {
-        //call detail api and pass data into view
-        //
-        // return view('hotel.index', [
-        //     'hotels' => $this->hotelRepository->getAllHotels()
-        // ]);
+    	  return view('hotel.list', ['slug' => $slug]);
     }
-
-
+    
+     
 }
